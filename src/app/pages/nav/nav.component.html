@@ -1,0 +1,38 @@
+<nav class="top-bar navbar is-transparent">
+  <div class="navbar-brand">
+
+      <h1 class="brande" >MIMIRe</h1>
+
+    <span #butt (click)="show_links()" class="navbar-burger " id="burger" data-target="nae">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+  </div>
+
+  <div #links class="tope navbar-menu">
+    <div class=" navbar-end">
+      <div class="navbar-item">
+        <div class=" field is-grouped">
+          <app-searchtab></app-searchtab>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    (function()
+    {
+      var burger = document.querySelector('#burger');
+      var nav = document.querySelector('#nae');
+      burger.addEventListener('click',function()
+      {
+        console.log("sdf")
+
+        nav.classList.toggle('is-active');
+      })
+    })
+
+  </script>
+</nav>
+

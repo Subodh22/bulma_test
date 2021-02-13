@@ -1,0 +1,23 @@
+
+.master{
+  height: 100%;
+  overflow: hidden;
+  display:flex;
+  flex-direction: column;
+
+  .page-content{
+    flex-grow: 1;
+    display:flex;
+
+    justify-content: center;
+    overflow-y: scroll;
+
+
+  }
+
+}
+.con{
+  min-width: 70%;
+}
+
+

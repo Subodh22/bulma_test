@@ -1,0 +1,30 @@
+@import '../../../main-style.scss';
+.main-container{
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  padding-top: 50px;
+  margin:auto ;
+}
+
+.butn{
+  background-color: $purple;
+
+  &:hover{
+    background-color:darken($purple,3%);
+
+
+  }
+  &:active{
+    background-color:darken($purple,6%) ;
+  }
+}
+.notes-list{
+  margin-top:35px;
+
+}
+
+app-notecard{
+  display: block;
+  margin-bottom: 25px;
+}
