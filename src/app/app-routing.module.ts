@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './pages/main/main.component';
 import { NotesComponent } from './pages/notes/notes.component';
 import { VidQComponent } from './pages/vid-q/vid-q.component';
-import { VideoplayerComponent } from './videoplayer/videoplayer.component';
+
 
 const routes: Routes = [
   {path:'',component:MainComponent,children:[
@@ -11,7 +11,8 @@ const routes: Routes = [
       path:'',component:NotesComponent
     }
   ]},{path:'search',component:VidQComponent},
-  {path:'watch',component:VideoplayerComponent}
+  {path:'watch',component:VidQComponent}
+
 
 ];
 

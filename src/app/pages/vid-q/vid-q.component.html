@@ -1,3 +1,36 @@
 
 <app-nav></app-nav>
-<app-videorec></app-videorec>
+<div class="direction"></div>
+<div class="claud">
+<div class="bul">
+<div class="containere "  >
+  <!-- <youtube-player videoId="sk3rpYkiHe8"></youtube-player> -->
+  <div class="columns" >
+
+<div #player class="colmun " style=" padding:0px; padding-top: 20px; padding-left: 20px; width: 60%; min-width:100vh;vertical-align: top;">
+
+<div #demoYouTubePlayer style="padding: 0px;">
+
+ <youtube-player [videoId]="videos"
+                      [width]="videoWidth" [height]="videoHeight"></youtube-player>
+                      <h1>This is the title</h1>
+                      <h2>views and body count</h2>
+
+</div>
+      </div>
+  <div class="column" style="padding: 5px; padding-top: 10px;" >
+    <div class="cruv" >
+      <app-videorec></app-videorec>
+    </div>
+
+  </div>
+
+  </div>
+</div>
+</div>
+<!-- <div class="topic_strip "></div>
+<div class="colmuns main_vid">
+  <div class="column player is-5"><youtube-player videoId="sk3rpYkiHe8"></youtube-player></div>
+  <div class="column lister is-5" style="height: 100%;"><app-videorec></app-videorec></div>
+</div>
+ -->

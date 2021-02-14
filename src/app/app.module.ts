@@ -10,7 +10,7 @@ import { VidQComponent } from './pages/vid-q/vid-q.component';
 import { SearchtabComponent } from './pages/searchtab/searchtab.component';
 import { NavComponent } from './pages/nav/nav.component';
 import { VidBlueComponent } from './pages/vid-blue/vid-blue.component';
-import { VideoplayerComponent } from './videoplayer/videoplayer.component';
+
 import { VideorecComponent } from './videorec/videorec.component';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { BridgeComponent } from './bridge/bridge.component';
@@ -27,7 +27,7 @@ import { BridgeComponent } from './bridge/bridge.component';
     SearchtabComponent,
     NavComponent,
     VidBlueComponent,
-    VideoplayerComponent,
+
     VideorecComponent,
     BridgeComponent,
 
@@ -40,6 +40,6 @@ import { BridgeComponent } from './bridge/bridge.component';
     YouTubePlayerModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent,VidQComponent]
 })
 export class AppModule { }
