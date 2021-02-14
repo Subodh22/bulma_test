@@ -14,6 +14,8 @@ import { VidBlueComponent } from './pages/vid-blue/vid-blue.component';
 import { VideorecComponent } from './videorec/videorec.component';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { BridgeComponent } from './bridge/bridge.component';
+import { CursorbutComponent } from './cursorbut/cursorbut.component';
+import { ScrollerComponent } from './scroller/scroller.component';
 
 
 
@@ -30,6 +32,8 @@ import { BridgeComponent } from './bridge/bridge.component';
 
     VideorecComponent,
     BridgeComponent,
+    CursorbutComponent,
+    ScrollerComponent,
 
 
 
