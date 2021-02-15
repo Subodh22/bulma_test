@@ -1,7 +1,7 @@
 <nav class="top-bar navbar is-transparent">
   <div class="navbar-brand">
 
-      <h1 class="brande" >MIMIRe</h1>
+      <h1 (click)='routing()' class="brande" >MIMIRe</h1>
 
     <span #butt (click)="show_links()" class="navbar-burger " id="burger" data-target="nae">
       <span></span>
@@ -21,17 +21,24 @@
     </div>
   </div>
   <script type="text/javascript">
+
     (function()
     {
+
       var burger = document.querySelector('#burger');
       var nav = document.querySelector('#nae');
+
       burger.addEventListener('click',function()
       {
-        console.log("sdf")
 
         nav.classList.toggle('is-active');
-      })
+      });
+
+      document.getElementsByTagName('button')[3].scrollIntoView();
+
     })
+
+
 
   </script>
 </nav>

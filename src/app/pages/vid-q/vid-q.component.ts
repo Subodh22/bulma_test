@@ -1,36 +1,3 @@
-// import {
-//   AfterViewInit, ChangeDetectorRef, Component, ViewChild,ElementRef, OnDestroy,OnInit
-// }from '@angular/core';
-
-// @Component({
-//   selector: 'app-vid-q',
-//   templateUrl: './vid-q.component.html',
-//   styleUrls: ['./vid-q.component.scss']
-// })
-// export class VidQComponent implements AfterViewInit, OnDestroy{
-//   @ViewChild('demo') demoYouTubePlayer: ElementRef<HTMLDivElement>;
-//   constructor(private _changeDetectorRef: ChangeDetectorRef) {}
-//   videoWidth: number | undefined=800px;
-//   videoHeight: number | undefined=1200px;
-//   ngOnInit(): void {
-//      this.onResize();
-//   window.addEventListener('resize', this.onResize);
-//   }
-
-
-//   onResize = (): void => {
-//     // Automatically expand the video to fit the page up to 1200px x 720px
-//     this.videoWidth = Math.min(this.demoYouTubePlayer.nativeElement.clientWidth, 1200);
-//     this.videoHeight = this.videoWidth * 0.6;
-//     this._changeDetectorRef.detectChanges();
-//   }
-//   ngAfterViewInit() {
-//     // ...
-//   }
-//   ngOnDestroy(): void {
-//     window.removeEventListener('resize', this.onResize);
-//   }
-// }
 
 import {
   AfterViewInit,
@@ -50,9 +17,10 @@ import { PlayercheckerService} from '../../playerchecker.service';
     templateUrl: './vid-q.component.html',
     styleUrls: ['./vid-q.component.scss']
   })
-export class VidQComponent implements AfterViewInit, OnDestroy{
+export class VidQComponent implements AfterViewInit, OnDestroy,OnInit{
   @ViewChild("demoYouTubePlayer") demoYouTubePlayer: ElementRef<HTMLDivElement>;
   @ViewChild("player") player: ElementRef<HTMLDivElement>;
+  @ViewChild("genny") genny: ElementRef<HTMLDivElement>;
   queryParam_q:string=" ";
   queryParam_playerid:string=" ";
   videos = "qdIBGoO6pMk";
@@ -64,7 +32,10 @@ export class VidQComponent implements AfterViewInit, OnDestroy{
     private route:ActivatedRoute,
     private vivi:PlayercheckerService
     ) {}
-
+    ngOnInit():void{
+      document.querySelector("#genny").scrollIntoView({ behavior: "smooth", block: "start" });
+      // this.genny.nativeElement.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   ngAfterViewInit(): void {
     this.onResize();
     this.route.queryParams.subscribe(params=>
@@ -77,6 +48,7 @@ export class VidQComponent implements AfterViewInit, OnDestroy{
       this.loader(this.queryParam_playerid)
 
     window.addEventListener("resize", this.onResize);
+    // document.querySelector("#genny").scrollIntoView({ behavior: "smooth", block: "start" });
   }
   loader(ii)
   {
@@ -88,6 +60,8 @@ export class VidQComponent implements AfterViewInit, OnDestroy{
     else{
       this.renderer.setStyle(this.player.nativeElement,'display','none');
     }
+    console.log(this.genny);
+    //
 
   }
 
@@ -102,6 +76,7 @@ export class VidQComponent implements AfterViewInit, OnDestroy{
   };
 
   ngOnDestroy(): void {
+
     window.removeEventListener("resize", this.onResize);
   }
 }

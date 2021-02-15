@@ -1,0 +1,50 @@
+<div class="bloc_1_edito">
+  <div id="nav_container">
+  <div id="next_nav">f</div>
+  <div id="prev_nav">g</div>
+  <div id="nav">
+
+          <li class="activeSlide">
+            <app-cursorbut></app-cursorbut>
+          </li>
+          <li>
+            <app-cursorbut></app-cursorbut>
+          </li>
+          <li>
+             <app-cursorbut></app-cursorbut>
+          </li>
+          <li>
+            <app-cursorbut></app-cursorbut>
+          </li>
+          <li>
+            <app-cursorbut></app-cursorbut>
+          </li>
+          <li>
+            <app-cursorbut></app-cursorbut>
+          </li>
+          <li>
+            <app-cursorbut></app-cursorbut>
+          </li>
+          <li>
+            <app-cursorbut></app-cursorbut>
+          </li>
+          <li>
+            <app-cursorbut></app-cursorbut>
+          </li>
+      </div>
+
+  </div>
+  </div>
+<script type="text/javascript">
+    $('#next_nav').click(function () {
+    	$( "#nav" ).animate({
+    		scrollLeft: '+=156px'
+    	});
+    });
+    $('#prev_nav').click(function () {
+    	$( "#nav" ).animate({
+    		scrollLeft: '-=156px'
+    	});
+    });
+
+</script>

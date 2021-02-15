@@ -1,0 +1,15 @@
+@import '../../main-style.scss';
+
+.strom
+{
+  background-color: $purple;
+  &:hover{
+    background-color:darken($purple,3%);
+
+
+  }
+  &:active{
+    background-color:darken($purple,6%) ;
+  }
+}
+// span{background:black;height: 1px; position:relative; top:-10px; left: 20px}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cursorbut',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CursorbutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
+  }
+  routing(topicname){
+    this.router.navigate(['/search'],{queryParams: {q:topicname}});
   }
 
 }
