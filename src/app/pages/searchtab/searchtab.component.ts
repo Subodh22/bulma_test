@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { SenderService } from 'src/app/sender.service';
 
 @Component({
   selector: 'app-searchtab',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchtabComponent implements OnInit {
 
-  constructor() { }
 
+  constructor(private Auth:SenderService,private route:Router) { }
+  datapoints=[]
   ngOnInit(): void {
   }
+
+  search_on(data)
+  {
+    const searcher=
+    {
+      "name":data.value
+    };
+     this.Auth.getsearchquery(searcher);
+
+     this.route.navigate(['']);
+
+
+  }
+
 
 }

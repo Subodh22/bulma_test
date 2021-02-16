@@ -1,13 +1,9 @@
 <div class="main-container">
  <app-searchtab></app-searchtab>
 
-<div class="notes-list">
-  <app-notecard></app-notecard>
-  <app-notecard></app-notecard>
-  <app-notecard></app-notecard>
-  <app-notecard></app-notecard>
-  <app-notecard></app-notecard>
-  <app-notecard></app-notecard>
+<div class="notes-list" *ngFor="let datain of posts" >
+  <app-notecard [customTitle]="datain._fields[0]"></app-notecard>
+
 
 </div>
 </div>

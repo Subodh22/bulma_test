@@ -3,28 +3,13 @@
 <div class="bul" >
   <app-nav></app-nav>
 
-  <div  class="scrollbar" id="ss">
-    <button>asdfffghjklkjkhgfd</button>
-    <button>asdfffghjklkjkhgfd</button>
-    <button>asdfffghjklkjkhgfd</button>
-    <button>asdfffghjklkjkhgfd</button>
+  <div  class="scrollbar" id="ss" >
 
-     <button>asdfffghjklkjkhgfd</button>
-     <button>asdfffghjklkjkhgfd</button>
-     <button>asdfffghjklkjkhgfd</button>
-     <button>asdfffghjklkjkhgfd</button>
-     <button>asdfffghjklkjkhgfd</button>
-     <button>asdfffghjklkjkhgfd</button>
-    <div id="genny">
 
-    <app-cursorbut></app-cursorbut>
-      </div>
-      <button>asdfffghjklkjkhgfd</button>
-     <button>asdfffghjklkjkhgfd</button>
-     <button>asdfffghjklkjkhgfd</button>
-     <button>asdfffghjklkjkhgfd</button>
-     <button>asdfffghjklkjkhgfd</button>
-     <button>asdfffghjklkjkhgfd</button>
+<div *ngFor="let data of topics">
+    <app-cursorbut [id_name]="data._fields[0].properties['name']" [button_name]=" data._fields[0].properties['degree']"></app-cursorbut>
+
+</div>
 
   </div>
 

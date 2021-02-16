@@ -9,6 +9,7 @@ import {
   ViewChild,Renderer2
 } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
+import { SenderService } from "src/app/sender.service";
 import { PlayercheckerService} from '../../playerchecker.service';
 
 
@@ -26,37 +27,58 @@ export class VidQComponent implements AfterViewInit, OnDestroy,OnInit{
   videos = "qdIBGoO6pMk";
   videoWidth: number | undefined;
   videoHeight: number | undefined;
-
+  topics=[];
+  videos_id=[];
   constructor(private _changeDetectorRef: ChangeDetectorRef,
     private renderer:Renderer2,
     private route:ActivatedRoute,
-    private vivi:PlayercheckerService
+    private vivi:PlayercheckerService,
+    private sendi:SenderService
     ) {}
-    ngOnInit():void{
-      document.querySelector("#genny").scrollIntoView({ behavior: "smooth", block: "start" });
-      // this.genny.nativeElement.scrollIntoView({ behavior: "smooth", block: "start" });
+    ngOnInit(){
+
     }
-  ngAfterViewInit(): void {
+  ngAfterViewInit(){
     this.onResize();
+    // document.querySelector("#genny").scrollIntoView({ behavior: "smooth", block: "start" });
+    // // this.genny.nativeElement.scrollIntoView({ behavior: "smooth", block: "start" });
     this.route.queryParams.subscribe(params=>
       {
         this.queryParam_q= params['q']
         this.queryParam_playerid=params['v_id']
 
       })
-      console.log(this.queryParam_playerid)
-      this.loader(this.queryParam_playerid)
 
-    window.addEventListener("resize", this.onResize);
+
+      this.loader(this.queryParam_playerid);
+      this.load_vide(this.queryParam_q);
+      window.addEventListener("resize", this.onResize);
+      document.querySelector("#genny").scrollIntoView({ behavior: "smooth", block: "start" });
+
     // document.querySelector("#genny").scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+  load_vide(q)
+  {
+    console.log(q);
+  this.sendi.get_player(q).subscribe((data)=>
+  {
+    console.log(data)
+    this.topics=data["user"]["records"];
+    this.videos_id=data["vid_di"]["records"];
+    console.log(this.topics);
+    console.log(this.videos_id);
+  })
   }
   loader(ii)
   {
-    console.log(ii)
+
+
     if(ii!=null)
     {
       this.renderer.setStyle(this.player.nativeElement,'display','block');
+
     }
+
     else{
       this.renderer.setStyle(this.player.nativeElement,'display','none');
     }

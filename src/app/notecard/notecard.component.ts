@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,25 +7,28 @@ import { Router } from '@angular/router';
   styleUrls: ['./notecard.component.scss']
 })
 export class NotecardComponent implements OnInit {
-  @ViewChild('truncator')truncator:ElementRef<HTMLElement>;
-  @ViewChild('bodyText')bodyText:ElementRef<HTMLElement>;
+  @Input()
+
+  customTitle:string;
+  // @ViewChild('truncator')truncator:ElementRef<HTMLElement>;
+  // @ViewChild('bodyText')bodyText:ElementRef<HTMLElement>;
   constructor(private renderer:Renderer2,
     private router:Router){}
 
 
 
   ngOnInit(): void {
-    let style = window.getComputedStyle(this.bodyText.nativeElement,null);
-    let viewableHeight = parseInt(style.getPropertyValue("height"),10);
-    if(this.bodyText.nativeElement.scrollHeight > viewableHeight)
-    {
-      this.renderer.setStyle(this.truncator.nativeElement,'display','block');
-    }else{
-      this.renderer.setStyle(this.truncator.nativeElement,'display','none');
-    }
+    // let style = window.getComputedStyle(this.bodyText.nativeElement,null);
+    // let viewableHeight = parseInt(style.getPropertyValue("height"),10);
+    // if(this.bodyText.nativeElement.scrollHeight > viewableHeight)
+    // {
+    //   this.renderer.setStyle(this.truncator.nativeElement,'display','block');
+    // }else{
+    //   this.renderer.setStyle(this.truncator.nativeElement,'display','none');
+    // }
   }
-  routing(){
-    this.router.navigate(['/search'],{queryParams: {q:"joi"}});
+  routing(topic_name){
+    this.router.navigate(['/search'],{queryParams: {q:topic_name}});
   }
 
 }
