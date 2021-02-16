@@ -1,10 +1,12 @@
 <div class="master">
 
   <div class="page-content" >
-  <div class="con" >
-    <app-vid-blue></app-vid-blue>
-
-
+  <div class="con"  >
+    <div *ngFor="let dd of data">
+    <app-vid-blue [img]="dd._fields[0].properties['img']" [name]="dd._fields[0].properties['img']" [des]="des" [viewcount]="viewcount"
+    [duration]="duration" [v_id]="v_id"
+    ></app-vid-blue>
+    </div>
   <div>
   </div>
   </div>

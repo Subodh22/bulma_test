@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {PlayercheckerService} from '../../playerchecker.service';
 @Component({
@@ -7,6 +7,12 @@ import {PlayercheckerService} from '../../playerchecker.service';
   styleUrls: ['./vid-blue.component.scss']
 })
 export class VidBlueComponent implements OnInit {
+  @Input() v_id:string;
+  @Input() name:string;
+  @Input() des:string;
+  @Input() viewcount:string;
+  @Input() duration:string;
+  @Input() img:string;
 
   constructor(private router:Router,
               private rone:PlayercheckerService) { }

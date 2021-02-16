@@ -1,14 +1,17 @@
-<div (click)='routin()' class="main_content">
+<div (click)='routin(v_id)' class="main_content">
 <div class="containere">
 <div class=" level">
   <div class="level-right">
     <div class="level-item">
-    <img class="img_thum" src="https://i.ytimg.com/vi/zfk-TaKe5NM/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDlwEbOjMz4Ayylzt8VdP_L3n4viw"  >
+    <img class="img_thum" src={{img}}  >
     </div>
     <div class="level-item">
       <div class="thum_words">
-<h1>asdfadsfasda</h1>
-<h2>sdafdsf</h2><h2>asdfdsf</h2></div>
+<h1>{{name}}</h1>
+<h2>{{des}}</h2>
+<h2>{{viewcount}}</h2>
+<h2>{{duration}}</h2>
+</div>
   </div>
   </div>
 
