@@ -17,6 +17,7 @@ export class VideorecComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

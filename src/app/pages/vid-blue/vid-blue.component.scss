@@ -8,6 +8,8 @@
 .main_content{
 
   margin: 10px;
+  &:hover{
+    cursor:pointer;}
 }
 .thum_words{
   min-width: 300px;

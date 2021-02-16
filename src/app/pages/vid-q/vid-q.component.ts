@@ -24,7 +24,7 @@ export class VidQComponent implements AfterViewInit, OnDestroy,OnInit{
   @ViewChild("genny") genny: ElementRef<HTMLDivElement>;
   queryParam_q:string=" ";
   queryParam_playerid:string=" ";
-  videos = "qdIBGoO6pMk";
+  videos :string;
   videoWidth: number | undefined;
   videoHeight: number | undefined;
   topics=[];
@@ -54,8 +54,8 @@ export class VidQComponent implements AfterViewInit, OnDestroy,OnInit{
       this.load_vide(this.queryParam_q);
       window.addEventListener("resize", this.onResize);
       document.querySelector("#genny").scrollIntoView({ behavior: "smooth", block: "start" });
-
-    // document.querySelector("#genny").scrollIntoView({ behavior: "smooth", block: "start" });
+      let pop="#"+this.queryParam_q;
+    document.querySelector(pop).scrollIntoView({ behavior: "smooth", block: "start" });
   }
   load_vide(q)
   {
@@ -65,8 +65,8 @@ export class VidQComponent implements AfterViewInit, OnDestroy,OnInit{
     console.log(data)
     this.topics=data["user"]["records"];
     this.videos_id=data["vid_di"]["records"];
-    console.log(this.topics);
-    console.log(this.videos_id);
+
+
   })
   }
   loader(ii)
@@ -75,6 +75,7 @@ export class VidQComponent implements AfterViewInit, OnDestroy,OnInit{
 
     if(ii!=null)
     {
+      this.videos=this.queryParam_playerid;
       this.renderer.setStyle(this.player.nativeElement,'display','block');
 
     }

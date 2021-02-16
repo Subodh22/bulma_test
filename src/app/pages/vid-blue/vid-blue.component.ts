@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router,ActivatedRoute } from '@angular/router';
 import {PlayercheckerService} from '../../playerchecker.service';
 @Component({
   selector: 'app-vid-blue',
@@ -9,20 +9,32 @@ import {PlayercheckerService} from '../../playerchecker.service';
 export class VidBlueComponent implements OnInit {
   @Input() v_id:string;
   @Input() name:string;
-  @Input() des:string;
+
   @Input() viewcount:string;
   @Input() duration:string;
   @Input() img:string;
+  queryParam_q:string=" ";
 
   constructor(private router:Router,
-              private rone:PlayercheckerService) { }
+              private rone:PlayercheckerService,
+              private route:ActivatedRoute) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+
+    this.route.queryParams.subscribe(params=>
+      {
+        this.queryParam_q= params['q']
+
+
+      })
   }
 
-  routin(){
+  routin(id){
     this.rone.checker();
 
-    this.router.navigate(['/watch'],{queryParams: {q:"joi",v_id:"asjdbvob89"}});
+    this.router.navigate(['/watch'],{queryParams: {q:this.queryParam_q,v_id:id}}).then(() => {
+      window.location.reload();
+    });
+
   }
 }
